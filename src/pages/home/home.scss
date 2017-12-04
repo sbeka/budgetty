@@ -1,3 +1,32 @@
 page-home {
 
+  ion-grid.grid {
+    padding: 0;
+  }
+
+  .income, .expence, .accounts {
+    margin: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ccc;
+    ion-col {
+      padding: 0;
+      text-align: center;
+      .title {
+        color: grey;
+        font-size: 90%;
+        margin-bottom: 3px;
+      }
+      img {
+        width: 60%;
+      }
+      .balance {
+        font-size: 90%;
+      }
+    }
+  }
+
+  .expence {
+    border-bottom: 0;
+  }
 }
