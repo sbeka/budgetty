@@ -12,102 +12,28 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row class="income">
-      <ion-col col-3 *ngFor="let income of incomes">
-        <div class="title">Депозит</div>
-        <img src="https://image.flaticon.com/icons/svg/189/189715.svg" alt="">
-        <div class="balance">2 353 &#8376;</div>
-      </ion-col>
-    </ion-row>
 
-    <ion-row class="accounts">
-      <ion-col col-3>
-        <div class="title">Кошелек</div>
-        <img src="https://image.flaticon.com/icons/svg/550/550638.svg" alt="">
-        <div class="balance">29 486 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Kaspi Gold</div>
-        <img src="https://image.flaticon.com/icons/svg/550/550638.svg" alt="">
-        <div class="balance">11 043 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">HalykBank</div>
-        <img src="https://image.flaticon.com/icons/svg/550/550638.svg" alt="">
-        <div class="balance">200 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">KZT</div>
-        <img src="https://image.flaticon.com/icons/svg/550/550638.svg" alt="">
-        <div class="balance">3 354 &#8376;</div>
-      </ion-col>
-    </ion-row>
+    <div id="accounts">
+      <div class="caard" *ngFor="let a of accounts">
+        <div class="title">{{a.title}}</div>
+        <img src="{{a.icon}}" alt="">
+        <div class="balance">{{a.balance}} &#8376;</div>
+      </div>
+      <div class="caard add-icon" (click)="addAccount()">
+        <img src="https://image.flaticon.com/icons/svg/149/149145.svg" alt="">
+      </div>
+    </div>
 
-    <ion-row class="expence">
-      <ion-col col-3>
-        <div class="title">Еда</div>
-        <img src="https://image.flaticon.com/icons/svg/168/168570.svg" alt="">
-        <div class="balance">8 915 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Дом</div>
-        <img src="https://image.flaticon.com/icons/svg/589/589528.svg" alt="">
-        <div class="balance">12 100 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Транспорт</div>
-        <img src="https://image.flaticon.com/icons/svg/234/234788.svg" alt="">
-        <div class="balance">600 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Сервисы</div>
-        <img src="https://image.flaticon.com/icons/svg/330/330767.svg" alt="">
-        <div class="balance">60 &#8376;</div>
-      </ion-col>
-    </ion-row>
-    <ion-row class="expence">
-      <ion-col col-3>
-        <div class="title">Еда</div>
-        <img src="https://image.flaticon.com/icons/svg/168/168570.svg" alt="">
-        <div class="balance">8 915 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Дом</div>
-        <img src="https://image.flaticon.com/icons/svg/589/589528.svg" alt="">
-        <div class="balance">12 100 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Транспорт</div>
-        <img src="https://image.flaticon.com/icons/svg/234/234788.svg" alt="">
-        <div class="balance">600 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Сервисы</div>
-        <img src="https://image.flaticon.com/icons/svg/330/330767.svg" alt="">
-        <div class="balance">60 &#8376;</div>
-      </ion-col>
-    </ion-row>
-    <ion-row class="expence">
-      <ion-col col-3>
-        <div class="title">Еда</div>
-        <img src="https://image.flaticon.com/icons/svg/168/168570.svg" alt="">
-        <div class="balance">8 915 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Дом</div>
-        <img src="https://image.flaticon.com/icons/svg/589/589528.svg" alt="">
-        <div class="balance">12 100 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Транспорт</div>
-        <img src="https://image.flaticon.com/icons/svg/234/234788.svg" alt="">
-        <div class="balance">600 &#8376;</div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="title">Сервисы</div>
-        <img src="https://image.flaticon.com/icons/svg/330/330767.svg" alt="">
-        <div class="balance">60 &#8376;</div>
-      </ion-col>
-    </ion-row>
+    <div id="expence">
+      <div class="caard" *ngFor="let c of categories">
+        <div class="title">{{c.title}}</div>
+        <img src="{{c.icon}}" alt="">
+        <div class="balance">8915 &#8376;</div>
+      </div>
+      <div class="caard add-icon" (click)="addCategory()">
+        <img src="https://image.flaticon.com/icons/svg/149/149145.svg" alt="">
+      </div>
+    </div>
+
   </ion-grid>
 </ion-content>

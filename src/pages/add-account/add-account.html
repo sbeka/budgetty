@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="vk">
+    <ion-title>Добавить счет</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Название счета</ion-label>
+        <ion-input type="text"
+                   id="account-name"
+                   class="form-control"
+                   required
+                   #name="ngModel"
+                   name="name"
+                   ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Баланс</ion-label>
+        <ion-input type="number"
+                   id="account-value"
+                   class="form-control"
+                   [ngModel]="1"
+                   name="balance"
+                   #balance="ngModel"
+                   required
+                   min="1"></ion-input>
+      </ion-item>
+      <div padding>
+        <button [disabled]="f.invalid" type="submit" ion-button color="vk" block>Добавить счет</button>
+      </div>
+    </ion-list>
+  </form>
+
+</ion-content>

@@ -4,13 +4,14 @@ page-home {
     padding: 0;
   }
 
-  .income, .expence, .accounts {
+  #expence, #accounts {
+    display: flex;
     margin: 0;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 0;
     border-bottom: 1px solid #ccc;
-    ion-col {
-      padding: 0;
+    .caard {
+      width: 90px;
+      padding: 10px;
       text-align: center;
       .title {
         color: grey;
@@ -18,15 +19,36 @@ page-home {
         margin-bottom: 3px;
       }
       img {
-        width: 60%;
+        width: 45px;
       }
       .balance {
-        font-size: 90%;
+        font-size: 80%;
       }
+    }
+    .add-icon {
+      margin-top: 19px;
     }
   }
 
-  .expence {
+
+  #accounts {
+    justify-content: start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    .caard {
+      flex: 0 0 auto;
+    }
+  }
+
+
+  #expence {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: flex-start;
     border-bottom: 0;
+    .caard {
+      padding-bottom: 0;
+      //flex: 0 0 auto;
+    }
   }
 }
