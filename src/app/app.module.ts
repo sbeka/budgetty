@@ -13,6 +13,8 @@ import {AddAccountPage} from "../pages/add-account/add-account";
 import {AddCategoryPage} from "../pages/add-category/add-category";
 import {CategoryService} from "../shared/services/category.service";
 import {AccountService} from "../shared/services/account.service";
+import {RecordService} from "../shared/services/record.service";
+import {AddRecordPage} from "../pages/add-record/add-record";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {AccountService} from "../shared/services/account.service";
     HomePage,
     TabsPage,
     AddAccountPage,
-    AddCategoryPage
+    AddCategoryPage,
+    AddRecordPage
   ],
   imports: [
     BrowserModule,
@@ -33,14 +36,16 @@ import {AccountService} from "../shared/services/account.service";
     HomePage,
     TabsPage,
     AddAccountPage,
-    AddCategoryPage
+    AddCategoryPage,
+    AddRecordPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CategoryService,
-    AccountService
+    AccountService,
+    RecordService
   ]
 })
 export class AppModule {}

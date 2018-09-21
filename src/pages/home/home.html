@@ -2,9 +2,9 @@
   <ion-navbar color="vk" class="my-nav">
     <ion-grid>
       <ion-row>
-        <ion-col col-4>Баланс <br> 40 729 &#8376;</ion-col>
-        <ion-col col-4>Расходы <br> 24 455 &#8376;</ion-col>
-        <ion-col col-4>Бюджет <br> 0 &#8376;</ion-col>
+        <ion-col col-4>Баланс <br> {{balance}} &#8376;</ion-col>
+        <ion-col col-4>Расходы <br> {{expences}} &#8376;</ion-col>
+        <ion-col col-4>Бюджет <br> {{capacity}} &#8376;</ion-col>
       </ion-row>
     </ion-grid>
   </ion-navbar>
@@ -25,10 +25,10 @@
     </div>
 
     <div id="expence">
-      <div class="caard" *ngFor="let c of categories">
+      <div class="caard" *ngFor="let c of categories" (click)="addRecord()">
         <div class="title">{{c.title}}</div>
         <img src="{{c.icon}}" alt="">
-        <div class="balance">8915 &#8376;</div>
+        <div class="balance">{{getSumCategory(c.title)}} &#8376;</div>
       </div>
       <div class="caard add-icon" (click)="addCategory()">
         <img src="https://image.flaticon.com/icons/svg/149/149145.svg" alt="">

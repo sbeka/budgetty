@@ -10,8 +10,9 @@ page-home {
     padding: 0;
     border-bottom: 1px solid #ccc;
     .caard {
-      width: 90px;
-      padding: 10px;
+      width: 80px;
+      height: 80px;
+      margin: 10px 0;
       text-align: center;
       .title {
         color: grey;
@@ -26,7 +27,7 @@ page-home {
       }
     }
     .add-icon {
-      margin-top: 19px;
+      padding-top: 19px;
     }
   }
 
