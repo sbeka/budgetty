@@ -12,7 +12,32 @@
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <ion-list>
       <ion-item>
-        <ion-label>Счет</ion-label>
+        <ion-label stacked>Введите сумму</ion-label>
+        <ion-input
+          type="number"
+          id="amount"
+          ngModel
+          name="amount"
+          #amount="ngModel"
+          required
+          min="1">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Выберите категорию</ion-label>
+        <ion-select
+          id="category"
+          required
+          #category="ngModel"
+          name="category"
+          [ngModel]="selectedCategoryTitle"
+          okText="Выбрать"
+          cancelText="Отмена">
+          <ion-option *ngFor="let category of categories" [value]="category.title">{{category.title}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Выберите счет</ion-label>
         <ion-select
           id="account"
           required
@@ -25,35 +50,14 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label>Категория</ion-label>
-        <ion-select
-          id="category"
-          required
-          #category="ngModel"
-          name="category"
+        <ion-label stacked>Описание расхода</ion-label>
+        <ion-input
+          type="text"
+          id="description"
           ngModel
-          okText="Выбрать"
-          cancelText="Отмена">
-          <ion-option *ngFor="let category of categories" [value]="category.title">{{category.title}}</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-label stacked>Сумма</ion-label>
-        <ion-input type="number"
-                   id="amount"
-                   [ngModel]="1"
-                   name="amount"
-                   #amount="ngModel"
-                   required
-                   min="1"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label stacked>Описание</ion-label>
-        <ion-input type="text"
-                   id="description"
-                   ngModel
-                   name="description"
-                   #description="ngModel"></ion-input>
+          name="description"
+          #description="ngModel">
+        </ion-input>
       </ion-item>
       <div padding>
         <button [disabled]="f.invalid" type="submit" ion-button color="vk" block>Добавить расход</button>

@@ -26,16 +26,38 @@
         <ion-input type="number"
                    id="account-value"
                    class="form-control"
-                   [ngModel]="1"
+                   ngModel
                    name="capacity"
                    #capacity="ngModel"
                    required
                    min="1"></ion-input>
       </ion-item>
-      <div padding>
-        <button [disabled]="f.invalid" type="submit" ion-button color="vk" block>Добавить категорию</button>
-      </div>
     </ion-list>
+
+
+    <div class="cc-selector" radio-group>
+      <span *ngFor="let icon of icons">
+        <input
+          required
+          type="radio"
+          name="icon"
+          ngModel
+          id="{{icon.fileName}}"
+          [value]="icon.fileName" />
+        <label
+          class="drinkcard-cc"
+          for="{{icon.fileName}}"
+          [style.background-image]="sanitizerUrl(icon.fileName)">
+        </label>
+      </span>
+
+    </div>
+
+
+    <div padding>
+      <button [disabled]="f.invalid" type="submit" ion-button color="vk" block>Добавить категорию</button>
+    </div>
+
   </form>
 
 </ion-content>

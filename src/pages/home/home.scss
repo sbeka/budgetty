@@ -11,16 +11,20 @@ page-home {
     border-bottom: 1px solid #ccc;
     .caard {
       width: 80px;
-      height: 80px;
-      margin: 10px 0;
+      height: 85px;
+      margin: 10px 0 0 0;
       text-align: center;
       .title {
         color: grey;
         font-size: 90%;
         margin-bottom: 3px;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap; /* Запрещаем перенос строк */
+        overflow: hidden;
       }
       img {
-        width: 45px;
+        width: 50px;
       }
       .balance {
         font-size: 80%;
@@ -33,10 +37,14 @@ page-home {
 
 
   #accounts {
-    justify-content: start;
+    justify-content: flex-start;
+    flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     .caard {
+      margin-bottom: 10px;
       flex: 0 0 auto;
     }
   }
@@ -45,11 +53,10 @@ page-home {
   #expence {
     justify-content: space-around;
     flex-wrap: wrap;
-    align-content: flex-start;
     border-bottom: 0;
     .caard {
       padding-bottom: 0;
-      //flex: 0 0 auto;
+      flex: 0 0 auto;
     }
   }
 }

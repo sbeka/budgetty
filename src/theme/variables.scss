@@ -13,6 +13,7 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
+@import "../../ion2-calendar/dist/index";
 
 
 // Shared Variables
@@ -38,8 +39,8 @@ $colors: (
     secondary:  #32db64,
     danger:     #f53d3d,
     light:      #f4f4f4,
-    dark:       #222,
-    vk:    #4C709B
+    dark:       #4C709B,
+    vk:    #222,
 );
 
 

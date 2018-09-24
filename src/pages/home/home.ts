@@ -35,11 +35,11 @@ export class HomePage implements OnInit {
     this.accounts = this.accountService.getAll();
     this.getTopInfo();
   }
-  
+
   ionViewWillEnter() {
     this.getTopInfo();
   }
-  
+
   getTopInfo() {
     //get all expences
     this.expences = this.recordService.getSum();
@@ -53,8 +53,8 @@ export class HomePage implements OnInit {
     this.navCtrl.push(AddAccountPage);
   }
 
-  addRecord() {
-    this.navCtrl.push(AddRecordPage);
+  addRecord(title: string) {
+    this.navCtrl.push(AddRecordPage, { title });
   }
 
   addCategory() {

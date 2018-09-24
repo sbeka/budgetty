@@ -25,7 +25,7 @@
     </div>
 
     <div id="expence">
-      <div class="caard" *ngFor="let c of categories" (click)="addRecord()">
+      <div class="caard" *ngFor="let c of categories" (click)="addRecord(c.title)">
         <div class="title">{{c.title}}</div>
         <img src="{{c.icon}}" alt="">
         <div class="balance">{{getSumCategory(c.title)}} &#8376;</div>

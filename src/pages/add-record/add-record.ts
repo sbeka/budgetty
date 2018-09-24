@@ -15,6 +15,7 @@ import {RecordService} from "../../shared/services/record.service";
 })
 export class AddRecordPage implements OnInit{
 
+  selectedCategoryTitle: string = '';
   categories: CategoryModel[] = [];
   accounts: AccountModel[] = [];
 
@@ -30,8 +31,8 @@ export class AddRecordPage implements OnInit{
   ngOnInit() {
     this.categories = this.categoryService.getAll();
     this.accounts = this.accountService.getAll();
+    this.selectedCategoryTitle = this.navParams.get('title');
   }
-
   onSubmit(form: NgForm) {
     let { account, category, amount, description } = form.value;
     if (+amount < 0) amount *= -1;
@@ -60,7 +61,7 @@ export class AddRecordPage implements OnInit{
   presentToast(text: string) {
     const toast = this.toastCtrl.create({
       message: text,
-      position: 'middle',
+      position: 'bottom',
       duration: 3000
     });
     toast.present();

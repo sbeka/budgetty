@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="vk">
+    <ion-title>Отчеты</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item class="showRangeDate" (click)="openCalendar()">{{date.from}} - {{date.to}}</ion-item>
+    <ion-item *ngFor="let record of records">
+      <img src="https://image.flaticon.com/icons/svg/550/550638.svg" item-start class="icon">
+      <h2>{{record.category}}</h2>
+      <p>{{record.description}}</p>
+      <div item-end>
+        <div class="expence-item">- {{record.amount}} &#8376;</div>
+        <div class="expence-date">{{convertDate(record.date)}}</div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

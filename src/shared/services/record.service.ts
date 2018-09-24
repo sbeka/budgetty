@@ -4,29 +4,25 @@ import {RecordModel} from "../models/record.model";
 @Injectable()
 export class RecordService {
 
-  private records: RecordModel[] = [
-    {
-      type: "out",
-      amount: 400,
-      category: "Еда",
-      date: "01.01.18 22:10",
-      description: "Купил напиток"
-    },
-    {
-      type: "out",
-      amount: 700,
-      category: "Еда",
-      date: "01.01.18 13:10",
-      description: "Купил обед"
+  //VARIABLES
+  private records: RecordModel[] = [];
+
+
+  //LIFESYCLE
+  constructor() {
+    let storageRecords = window.localStorage.getItem('records');
+    if (storageRecords) {
+      this.records = JSON.parse(storageRecords);
     }
-  ];
+  }
 
-  constructor() {}
 
+
+
+  //GET
   getAll(): RecordModel[] {
     return this.records;
   }
-
   getSumByCategory(category: string): number {
     let sum = 0;
     let resCategories = this.records.filter(res => res.category === category);
@@ -37,7 +33,6 @@ export class RecordService {
     }
     return sum;
   }
-
   getSum(): number {
     let sum = 0;
     for(let record of this.records) {
@@ -46,7 +41,16 @@ export class RecordService {
     return sum;
   }
 
+
+  //SET
   add(data: RecordModel) {
     this.records.push(data);
+    this.saveToStorage();
+  }
+
+
+  //HELPER FUNCTIONS
+  saveToStorage() {
+    window.localStorage.setItem('records', JSON.stringify(this.records));
   }
 }

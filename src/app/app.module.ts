@@ -15,6 +15,10 @@ import {CategoryService} from "../shared/services/category.service";
 import {AccountService} from "../shared/services/account.service";
 import {RecordService} from "../shared/services/record.service";
 import {AddRecordPage} from "../pages/add-record/add-record";
+import {HistoryPage} from "../pages/history/history";
+import {ReportPage} from "../pages/report/report";
+import {SettingsPage} from "../pages/settings/settings";
+//import {CalendarModule} from "ion2-calendar";
 
 @NgModule({
   declarations: [
@@ -23,12 +27,16 @@ import {AddRecordPage} from "../pages/add-record/add-record";
     TabsPage,
     AddAccountPage,
     AddCategoryPage,
-    AddRecordPage
+    AddRecordPage,
+    HistoryPage,
+    ReportPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    FormsModule
+    FormsModule,
+    //CalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +45,10 @@ import {AddRecordPage} from "../pages/add-record/add-record";
     TabsPage,
     AddAccountPage,
     AddCategoryPage,
-    AddRecordPage
+    AddRecordPage,
+    HistoryPage,
+    ReportPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,
